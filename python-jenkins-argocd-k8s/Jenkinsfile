@@ -18,10 +18,14 @@ pipeline {
             branch: 'main'
         }
     }
-        stage ('Build docker') {
+        stage('Build Docker') {
             steps {
-                echo 'Build docker image'
-                sh 'docker build -t gowri9493/cicd-e2e:$(BUILD_NUMBER) .'
+                script {
+                    sh '''
+                    echo 'Build Docker Image'
+                    docker build -t gowri9493/cicd-e2e:${BUILD_NUMBER} .
+                    '''
+                }
             }
         }
 }
