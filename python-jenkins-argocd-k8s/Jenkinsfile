@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_TAG = ${"BUILD_NUMBER"}
+        IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
     stages {
@@ -23,7 +23,7 @@ pipeline {
                  script {
                     sh '''
                     echo 'Build Docker Image'
-                    docker build -t abhishekf5/cicd-e2e:${BUILD_NUMBER} .
+                    docker build -t abhishekf5/cicd-e2e:"${BUILD_NUMBER}" .
                     '''
                 }
             }
