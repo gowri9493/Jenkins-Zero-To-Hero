@@ -18,12 +18,13 @@ pipeline {
             branch: 'main'
         }
     }
+        stage ('Build docker') {
+            steps {
+                echo 'Build docker image'
+            }
+        }
 }
-    post {
-        always {
-            echo "pipeline completed"
+    
         
-    }
-        
 }
-}
+
