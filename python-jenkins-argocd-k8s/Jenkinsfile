@@ -21,7 +21,7 @@ pipeline {
         stage ('Build docker') {
             steps {
                 echo 'Build docker image'
-                sh 'docker build -t gowri9493/cicd-e2e:$(BUILD_NUMBER) . '
+                sh 'docker build -t gowri9493/cicd-e2e:$(BUILD_NUMBER) .'
             }
         }
 }
